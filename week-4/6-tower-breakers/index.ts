@@ -33,7 +33,8 @@ function readLine(): string {
  */
 
 function towerBreakers(n: number, m: number): number {
-	// Write your code here
+	if (m === 1) return 2;
+	return n % 2 ? 1 : 2;
 }
 
 function main() {

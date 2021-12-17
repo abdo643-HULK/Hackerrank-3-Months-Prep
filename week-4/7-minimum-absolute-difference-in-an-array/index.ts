@@ -24,33 +24,23 @@ function readLine(): string {
 }
 
 /*
- * Complete the 'pageCount' function below.
+ * Complete the 'minimumAbsoluteDifference' function below.
  *
  * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER n
- *  2. INTEGER p
+ * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-// not the best solution but like people say: if it ain't
-// broke don't fix it.
-function pageCount(n: number, p: number): number {
-	if (p === 1) return 0;
-	if (n % p === 1 && p % 2 !== 0) return 1;
-	if (n % p === 1 && p % 2 === 0) return 0;
-	if (n % p === 0 && n === p) return 0;
+function minimumAbsoluteDifference(arr: number[]): number {
+	arr = arr.sort((a, b) => a - b);
 
-	let frontCnt = 1;
-	let backCnt = 1;
+	const differences = Array(arr.length).fill(0);
 
-	for (let i = 2; i < n - 2; i += 2) {
-		if (p === i || p === i + 1) break;
-		if (p === n - i || p === n - i - 1) break;
-		++frontCnt;
-		++backCnt;
+	for (let i = 0; i < arr.length; ++i) {
+		const pair = arr.slice(i, i + 2);
+		differences[i] = Math.abs(pair[0] - pair[1]);
 	}
 
-	return Math.min(frontCnt, backCnt);
+	return differences.filter((v) => !isNaN(v)).sort((a, b) => a - b)[0];
 }
 
 function main() {
@@ -58,9 +48,12 @@ function main() {
 
 	const n: number = parseInt(readLine().trim(), 10);
 
-	const p: number = parseInt(readLine().trim(), 10);
+	const arr: number[] = readLine()
+		.replace(/\s+$/g, '')
+		.split(' ')
+		.map((arrTemp) => parseInt(arrTemp, 10));
 
-	const result: number = pageCount(n, p);
+	const result: number = minimumAbsoluteDifference(arr);
 
 	console.log(result);
 

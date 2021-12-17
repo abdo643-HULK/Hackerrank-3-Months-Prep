@@ -37,7 +37,6 @@ function closestNumbers(arr: number[]): number[] {
 	for (let i = 0; i < arr.length - 1; ++i) {
 		const pair = arr.slice(i, i + 2);
 		const diff = pair[1] - pair[0];
-		// console.log('DIFF: ', diff, ', MIN: ', minDiff);
 		if (diff < minDiff) minDiff = diff;
 	}
 
