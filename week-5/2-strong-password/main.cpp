@@ -6,15 +6,16 @@ string ltrim(const string &);
 string rtrim(const string &);
 
 /*
- * Complete the 'maxMin' function below.
+ * Complete the 'minimumNumber' function below.
  *
  * The function is expected to return an INTEGER.
  * The function accepts following parameters:
- *  1. INTEGER k
- *  2. INTEGER_ARRAY arr
+ *  1. INTEGER n
+ *  2. STRING password
  */
 
-int maxMin(int k, vector<int> arr) {
+int minimumNumber(int n, string password) {
+    // Return the minimum number of characters to make the password strong
 
 }
 
@@ -27,25 +28,12 @@ int main()
 
     int n = stoi(ltrim(rtrim(n_temp)));
 
-    string k_temp;
-    getline(cin, k_temp);
+    string password;
+    getline(cin, password);
 
-    int k = stoi(ltrim(rtrim(k_temp)));
+    int answer = minimumNumber(n, password);
 
-    vector<int> arr(n);
-
-    for (int i = 0; i < n; i++) {
-        string arr_item_temp;
-        getline(cin, arr_item_temp);
-
-        int arr_item = stoi(ltrim(rtrim(arr_item_temp)));
-
-        arr[i] = arr_item;
-    }
-
-    int result = maxMin(k, arr);
-
-    fout << result << "\n";
+    fout << answer << "\n";
 
     fout.close();
 

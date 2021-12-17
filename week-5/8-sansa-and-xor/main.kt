@@ -18,31 +18,27 @@ import kotlin.sequences.*
 import kotlin.text.*
 
 /*
- * Complete the 'maxMin' function below.
+ * Complete the 'sansaXor' function below.
  *
  * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER k
- *  2. INTEGER_ARRAY arr
+ * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-fun maxMin(k: Int, arr: Array<Int>): Int {
+fun sansaXor(arr: Array<Int>): Int {
     // Write your code here
 
 }
 
 fun main(args: Array<String>) {
-    val n = readLine()!!.trim().toInt()
+    val t = readLine()!!.trim().toInt()
 
-    val k = readLine()!!.trim().toInt()
+    for (tItr in 1..t) {
+        val n = readLine()!!.trim().toInt()
 
-    val arr = Array<Int>(n, { 0 })
-    for (i in 0 until n) {
-        val arrItem = readLine()!!.trim().toInt()
-        arr[i] = arrItem
+        val arr = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
+
+        val result = sansaXor(arr)
+
+        println(result)
     }
-
-    val result = maxMin(k, arr)
-
-    println(result)
 }

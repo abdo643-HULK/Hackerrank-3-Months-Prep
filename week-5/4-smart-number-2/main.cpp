@@ -1,0 +1,37 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool is_smart_number(int num) {
+    int val = (int) sqrt(num);
+
+	// because sqrt of odd numbers
+	// is always an int this works
+    // if(num / val == 1)
+	// becomes: 
+	if(sqrt(num) == val)
+        return true;
+    return false;
+}
+
+int main() {
+    
+    int test_cases;
+    cin >> test_cases;
+    int num;
+    for(int i = 0; i < test_cases; i++) {
+        cin >> num;
+        bool ans = is_smart_number(num);
+        if(ans) {
+            cout << "YES" << endl;
+        }
+        else cout << "NO" << endl;
+    }
+    return 0;
+}
+
+
+

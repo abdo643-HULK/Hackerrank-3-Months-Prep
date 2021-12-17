@@ -18,15 +18,15 @@ import kotlin.sequences.*
 import kotlin.text.*
 
 /*
- * Complete the 'maxMin' function below.
+ * Complete the 'missingNumbers' function below.
  *
- * The function is expected to return an INTEGER.
+ * The function is expected to return an INTEGER_ARRAY.
  * The function accepts following parameters:
- *  1. INTEGER k
- *  2. INTEGER_ARRAY arr
+ *  1. INTEGER_ARRAY arr
+ *  2. INTEGER_ARRAY brr
  */
 
-fun maxMin(k: Int, arr: Array<Int>): Int {
+fun missingNumbers(arr: Array<Int>, brr: Array<Int>): Array<Int> {
     // Write your code here
 
 }
@@ -34,15 +34,13 @@ fun maxMin(k: Int, arr: Array<Int>): Int {
 fun main(args: Array<String>) {
     val n = readLine()!!.trim().toInt()
 
-    val k = readLine()!!.trim().toInt()
+    val arr = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
 
-    val arr = Array<Int>(n, { 0 })
-    for (i in 0 until n) {
-        val arrItem = readLine()!!.trim().toInt()
-        arr[i] = arrItem
-    }
+    val m = readLine()!!.trim().toInt()
 
-    val result = maxMin(k, arr)
+    val brr = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
 
-    println(result)
+    val result = missingNumbers(arr, brr)
+
+    println(result.joinToString(" "))
 }
