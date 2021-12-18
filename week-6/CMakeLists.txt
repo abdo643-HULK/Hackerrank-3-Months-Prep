@@ -4,13 +4,6 @@
 #
 # Tasks are added as separate sub-projects so as compilation errors in
 # one task don't affect another task.
-
-3.20
 project(Project)
 
-set(CMAKE_CXX_STANDARD 14)
-
-
-# Add tasks subprojects
-include(cmake/utils.cmake)
-add_subprojects(${CMAKE_SOURCE_DIR})
+add_executable(prime-dates 1-prime-dates/main.cpp)
