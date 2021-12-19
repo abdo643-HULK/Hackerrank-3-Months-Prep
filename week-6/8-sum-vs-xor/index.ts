@@ -29,7 +29,8 @@ function readLine(): string {
  * The function is expected to return a LONG_INTEGER.
  * The function accepts LONG_INTEGER n as parameter.
  */
-
+// My naive version was just a for loop and
+// that took forever to finish with big numbers
 function sumXor(n: number): number {
 	if (n === 0) return 1;
 	const bin = (BigInt(n) >> 0n).toString(2);
